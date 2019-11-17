@@ -5,9 +5,8 @@ import { Fonts, Colors } from '../../Theme'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.lightGray
+    backgroundColor: '#F1F2F6'
   },
-
   image: {
     height: 106,
     width: 106,
@@ -23,11 +22,11 @@ export default StyleSheet.create({
     fontFamily: Fonts.PoppinsSemiBold,
     color: 'black'
   },
-  signInButton: {
+  forgotButton: {
     backgroundColor: Colors.lightGreen,
     borderRadius: 10
   },
-  signInText: {
+  forgotText: {
     color: 'white'
   },
   forgotPasswordText: {
@@ -44,7 +43,7 @@ export default StyleSheet.create({
     color: '#407AFF'
 
   },
-  signInContainer: {
+  forgotContainer: {
     alignItems: 'center',
     width: '100%',
     justifyContent: 'flex-end'

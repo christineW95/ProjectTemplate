@@ -5,7 +5,7 @@ import { Fonts, Colors } from '../../Theme'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.lightGray
+    backgroundColor: '#F1F2F6'
   },
 
   image: {
@@ -23,11 +23,11 @@ export default StyleSheet.create({
     fontFamily: Fonts.PoppinsSemiBold,
     color: 'black'
   },
-  signInButton: {
+  registerButton: {
     backgroundColor: Colors.lightGreen,
     borderRadius: 10
   },
-  signInText: {
+  registerText: {
     color: 'white'
   },
   forgotPasswordText: {

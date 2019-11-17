@@ -1,4 +1,5 @@
 import { StyleSheet, Platform } from 'react-native'
+import { Fonts } from '../../Theme'
 
 export default StyleSheet.create({
   container: {
@@ -6,15 +7,23 @@ export default StyleSheet.create({
     marginVertical: 5
   },
   image: {
-    top: Platform.OS === 'android' ? 30 : 20,
+    top: Platform.OS === 'android' ? 25 : 20,
     position: 'absolute'
   },
   input: {
-    borderBottomColor: 'black',
+    borderBottomColor: '#CDCDD8',
     borderBottomWidth: 1,
-    paddingVertical: 15,
+    paddingVertical: 12,
+    fontSize: 14,
+    fontFamily: Fonts.PoppinsMedium,
     width: '100%',
-    paddingHorizontal: 30
+    paddingHorizontal: 30,
+    color: 'black'
+  },
+  error: {
+    fontFamily: Fonts.PoppinsMedium,
+    fontSize: 15,
+    color: 'red'
   }
 
 })

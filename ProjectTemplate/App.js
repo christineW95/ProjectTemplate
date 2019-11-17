@@ -7,21 +7,12 @@
  */
 
 import React from 'react'
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar
-} from 'react-native'
-
-import LoginScreen from './screens/LoginScreen/LoginScreen'
+import AppNavigation from './navigation/AppNavigation'
 
 const App = () => {
   return (
 
-    <LoginScreen />
+    <AppNavigation />
   )
 }
 
