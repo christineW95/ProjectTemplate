@@ -5,7 +5,7 @@ import { Fonts, Colors } from '../../Theme'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#F1F2F6'
+    backgroundColor: '#F1F2F6'
   },
 
  
