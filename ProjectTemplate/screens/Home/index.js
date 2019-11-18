@@ -8,15 +8,10 @@ const keyboardBehavior=Platform.OS === 'ios'? 'padding':''
 export default class Home extends Component {
   render () {
     return (
-      <KeyboardAvoidingView style={HomeStyles.container}   behavior={keyboardBehavior} keyboardVerticalOffset={keyboardVerticalOffset}>
-        <SafeAreaView style={{flex:1}}>
-        <ScrollView  style={{...HomeStyles.container,  marginVertical: 10, marginHorizontal: 10}} contentContainerStyle={{flexGrow:1}}>
           <View style={HomeStyles.container}>
             <NavigationTabs/>
           </View>
-        </ScrollView>
-        </SafeAreaView>
-      </KeyboardAvoidingView>
+      
     )
   }
 }
