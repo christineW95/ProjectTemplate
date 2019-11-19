@@ -7,22 +7,9 @@ var {width, height} = Dimensions.get('window');
 export default class NavigationTabs extends Component {
   render() {
     return (
-      <View style={{backgroundColor:'yellow',flex:1}}>
-        <Text>Hello world</Text>
+      <View style={{flex:1}}>
         <Tabs/>
       </View>
-
-      // <ImageBackground
-      //   source={require('../../../assets/Images/drawable-hdpi/Background.png')}
-      //   style={{
-      //     flex: 1,
-      //     width: null,
-      //     height: null,
-      //     position: 'absolute',
-      //     bottom: 0,
-      //   }}
-      //   imageStyle={{resizeMode: 'center', flex: 1}}>
-      // </ImageBackground>
     );
   }
 }

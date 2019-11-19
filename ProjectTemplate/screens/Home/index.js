@@ -8,27 +8,11 @@ var {width, height} = Dimensions.get('window');
 export default class Home extends Component {
   render() {
     return (
-      // <View
-      //   style={{
-      //     flex: 1,
-      //     paddingTop: Platform.OS === 'ios' ? 20 : 0,
-      //     backgroundColor: 'green',
-      //     alignItems:'center',
-      //     justifyContent: 'flex-end',
-      //   }}>
-        <ImageBackground
-          source={require('../../assets/Images/drawable-xxhdpi/Dashboard.png')}
-          style={{
-             flex:1,
-             width: width,
-             height: null,
-            backgroundColor: 'black',
-            justifyContent: 'flex-end',
-          }}
-          imageStyle={{flex:1,resizeMode: 'contain'}}>
+      <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 20 : 0, backgroundColor: 'green', }}>
+        <View style={{flex:1}}>
             <NavigationTabs/>
-        </ImageBackground>
-      // </View>
+        </View>
+       </View>
     );
   }
 }
