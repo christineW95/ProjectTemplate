@@ -1,17 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  Image,
-  FlatList,
-  Text,
-} from 'react-native';
+import {SafeAreaView, ScrollView, View, FlatList, Text} from 'react-native';
 import TabStyles from './Tabs.styles';
 import DashboardCard from '../../../components/Card/DashboardCard';
-import AppButton from '../../../components/AppButton/AppButton';
 import {Fonts, Colors} from '../../../Theme';
+import AppText from '../../../components/AppText/AppText';
+import CardImage from '../../../components/Card/Image';
+import Stars from '../../../components/StarReview/StarReview';
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -98,7 +93,40 @@ const DATA = [
     cardColor: '#F68D1A',
   },
 ];
-
+const DATA_Trending = [
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'CDC Kitchen Spicy',
+    location: 'Evansville,USA',
+    reviews: 3,
+    price: 78,
+    icon: require('../../../assets/Images/image.png'),
+  },
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'CDC Kitchen Spicy',
+    location: 'Evansville,USA',
+    reviews: 3,
+    price: 78,
+    icon: require('../../../assets/Images/image.png'),
+  },
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'CDC Kitchen Spicy',
+    location: 'Evansville,USA',
+    reviews: 3,
+    price: 78,
+    icon: require('../../../assets/Images/image.png'),
+  },
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'CDC Kitchen Spicy',
+    location: 'Evansville,USA',
+    reviews: 3,
+    price: 78,
+    icon: require('../../../assets/Images/image.png'),
+  },
+];
 export default class Main extends Component {
   render() {
     return (
@@ -124,20 +152,23 @@ export default class Main extends Component {
               }}
               horizontal={true}
               renderItem={({item}) => (
-                <DashboardCard
-                  title={item.title}
-                  NumberOfplaces={item.NumberOfPlaces}
-                  icon={item.icon}
-                  cardColor={item.cardColor}
-                />
+                <DashboardCard cardColor={item.cardColor}>
+                  <View style={{alignItems: 'center'}}>
+                    <CardImage icon={item.icon} />
+                  </View>
+                  <View
+                    style={{alignItems: 'center', flex: 1, marginBottom: 10}}>
+                    <AppText text={item.title} />
+                    <AppText>{item.NumberOfPlaces} places</AppText>
+                  </View>
+                </DashboardCard>
               )}
             />
           </View>
-          <View style={{backgroundColor: 'black', flex: 2, marginVertical: 10}}>
+          <View style={{ flex: 2, marginVertical: 8}}>
             <View
               style={{
                 flex: 2,
-                backgroundColor: 'yellow',
                 flexDirection: 'row',
               }}>
               <View style={{flex: 8, justifyContent: 'center'}}>
@@ -147,34 +178,85 @@ export default class Main extends Component {
               </View>
               <View
                 style={{
-                  flex: 2,
+                  flex: 3,
                   justifyContent: 'center',
                   alignItems: 'flex-end',
                   marginHorizontal: 25,
                 }}>
                 <Text
-                  style={{fontFamily: Fonts.PoppinsBold, color: Colors.blue}}>
+                  style={{
+                    fontFamily: Fonts.PoppinsBold,
+                    color: Colors.blue,
+                    flexWrap: 'nowrap',
+                  }}>
                   Show all
                 </Text>
               </View>
             </View>
 
-            <View style={{flex: 8, backgroundColor: 'green'}}>
+            <View>
               <FlatList
-                data={DATA}
+                data={DATA_Trending}
                 contentContainerStyle={{
                   justifyContent: 'space-evenly',
-                  flexGrow: 1,
+                  // flexGrow: 1,
                   marginVertical: 10,
                 }}
                 horizontal={true}
                 renderItem={({item}) => (
-                  <DashboardCard
-                    title={item.title}
-                    NumberOfplaces={item.NumberOfPlaces}
-                    icon={item.icon}
-                    cardColor={item.cardColor}
-                  />
+                  <DashboardCard cardColor={'white'}>
+                    <View>
+                      <View
+                        style={{
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          borderTopRightRadius: 10,
+                          borderTopLeftRadius: 10,
+                          overflow: 'hidden',
+                        }}>
+                        <CardImage icon={item.icon} style={{resizeMode:'contain'}}/>
+                      </View>
+                      <View style={{flex: 1,marginHorizontal: 10,marginVertical: 5,}}>
+                        <View
+                          style={{
+                            flex: 1,
+                            justifyContent: 'center',
+                            alignItems: 'flex-start',
+                          }}>
+                          <AppText
+                            text={item.title}
+                            style={{
+                              color: '#F42C53',
+                              fontFamily: Fonts.PoppinsMedium,
+                            }}
+                          />
+                          <AppText
+                            style={{
+                              color: '#4E596F',
+                              fontFamily: Fonts.PoppinsRegular,
+                            }}
+                            text={item.location}
+                          />
+                        </View>
+                        <View
+                          style={{
+                            alignItems: 'flex-end',
+                            flex: 1,
+                            marginBottom: 10,
+                            flexDirection: 'row',
+                          }}>
+                          <View style={{flex: 8, alignItems: 'flex-start'}}>
+                            <Stars />
+                          </View>
+                          <View style={{flex: 2}}>
+                            <AppText style={{color:'black'}}>
+                              ${item.price}
+                            </AppText>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </DashboardCard>
                 )}
               />
             </View>
