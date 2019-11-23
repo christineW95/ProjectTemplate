@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import Main from './Home';
 import Cart from './Cart';
+import Profile from './Profile';
 // tabBarIcon: ({ focused, tintColor }) => {
 //   return <Image source={require('./images/tab_explore.png')} />
 // }
@@ -18,7 +19,6 @@ const Tabs = createMaterialBottomTabNavigator(
     Home: {
       screen: Main,
       navigationOptions: {
-        tabBarLabel: 'Home',
         tabBarIcon: ({tintColor}) => (
           <View>
             <Image
@@ -34,11 +34,38 @@ const Tabs = createMaterialBottomTabNavigator(
     Cart: {
       screen: Cart,
       navigationOptions: {
-        tabBarLabel: 'Cart',
         tabBarIcon: ({tintColor}) => (
           <View>
             <Image
               source={require('../../../assets/Images/Order_icon.png')}
+              resizeMode="contain"
+              style={{flex: 1}}
+            />
+          </View>
+        ),
+      },
+    },
+    Favorite: {
+      screen: Favorite,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) => (
+          <View>
+            <Image
+              source={require('../../../assets/Images/Favorites_Icon.png')}
+              resizeMode="contain"
+              style={{flex: 1}}
+            />
+          </View>
+        ),
+      },
+    },
+    Profile: {
+      screen: Profile,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) => (
+          <View>
+            <Image
+              source={require('../../../assets/Images/Profile_Icon.png')}
               resizeMode="contain"
               style={{flex: 1}}
             />
