@@ -7,7 +7,7 @@ const AppText = props => {
   return (
     <View>
       <Text
-        style={[ {fontFamily: Fonts.PoppinsBold, color: 'white'},props.style]}>
+        style={[ {fontFamily: Fonts.PoppinsBold, color: 'white'},props.textStyles]}>
         {text}
       </Text>
     </View>
