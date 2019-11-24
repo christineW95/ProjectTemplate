@@ -138,6 +138,17 @@ const MOST_POPULAR = [
       {img: require('../../../assets/Images/image.png')},
     ],
   },
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'The Restaurant at Meadwood',
+    location: '22 St. Evansville,USA',
+    reviews: 3,
+    additional_info: 'Open 8am',
+    icon: [
+      {img: require('../../../assets/Images/image.png')},
+      {img: require('../../../assets/Images/image.png')},
+    ],
+  },
 ];
 export default class Main extends Component {
   render() {
@@ -349,7 +360,7 @@ export default class Main extends Component {
                       borderTopRightRadius: 10,
                       borderTopLeftRadius: 10,
                       overflow: 'hidden',
-                      flexDirection:'row'
+                      flexDirection: 'row',
                     }}
                     cardImage={item.icon}
                     cardImageStyles={{resizeMode: 'contain', margin: 10}}
@@ -394,7 +405,10 @@ export default class Main extends Component {
                           <Stars />
                         </View>
                         <View style={{flex: 2}}>
-                          <AppText textStyles={{color: 'black'}} text={item.additional_info}/>
+                          <AppText
+                            textStyles={{color: 'black'}}
+                            text={item.additional_info}
+                          />
                         </View>
                       </View>
                     </View>
