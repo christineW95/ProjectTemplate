@@ -7,6 +7,7 @@ import DashboardCard from '../../components/Card/DashboardCard';
 import AppText from '../../components/AppText/AppText';
 import Stars from '../../components/StarReview/StarReview';
 import {Fonts} from '../../Theme';
+import Header from '../../components/Header';
 const DATA_Trending = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -72,72 +73,79 @@ export default class Trending extends Component {
 
   render() {
     return (
-        <FlatList
-          data={DATA_Trending}
-          contentContainerStyle={{backgroundColor:'#F1F2F6'}}
-          renderItem={({item}) => (
-            <DashboardCard
-            style={{margin:10}}
-              cardColor={'white'}
-              imageContainerStyles={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderTopRightRadius: 10,
-                borderTopLeftRadius: 10,
-                overflow: 'hidden',
-              }}
-              cardImage={item.icon}
-              cardImageStyles={{resizeMode: 'contain',flex:1,margin:7}}
-              title={item.title}
-              textStyles={{
-                color: '#F42C53',
-                fontFamily: Fonts.PoppinsMedium,
-              }}
-              titleContainerStyles={{
-                flex: 1,
-                alignItems: 'flex-start',
-                margin: 10,
-              }}>
-              <View
-                style={{
+      <View style={{flex: 1}}>
+        <View style={{flex: 2}}>
+          <Header />
+        </View>
+        <View style={{flex: 8}}>
+          <FlatList
+            data={DATA_Trending}
+            contentContainerStyle={{backgroundColor: '#F1F2F6'}}
+            renderItem={({item}) => (
+              <DashboardCard
+                style={{margin: 10}}
+                cardColor={'white'}
+                imageContainerStyles={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderTopRightRadius: 10,
+                  borderTopLeftRadius: 10,
+                  overflow: 'hidden',
+                }}
+                cardImage={item.icon}
+                cardImageStyles={{resizeMode: 'contain', flex: 1, margin: 7}}
+                title={item.title}
+                textStyles={{
+                  color: '#F42C53',
+                  fontFamily: Fonts.PoppinsMedium,
+                }}
+                titleContainerStyles={{
                   flex: 1,
-                  marginHorizontal: 10,
-                  marginVertical: 5,
+                  alignItems: 'flex-start',
+                  margin: 10,
                 }}>
                 <View
                   style={{
                     flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'flex-start',
+                    marginHorizontal: 10,
+                    marginVertical: 5,
                   }}>
-                  <AppText
-                    textStyles={{
-                      color: '#4E596F',
-                      fontFamily: Fonts.PoppinsRegular,
-                    }}
-                    text={item.location}
-                  />
-                </View>
-                <View
-                  style={{
-                    alignItems: 'flex-end',
-                    flex: 1,
-                    marginBottom: 10,
-                    flexDirection: 'row',
-                  }}>
-                  <View style={{flex: 8, alignItems: 'flex-start'}}>
-                    <Stars />
+                  <View
+                    style={{
+                      flex: 1,
+                      justifyContent: 'center',
+                      alignItems: 'flex-start',
+                    }}>
+                    <AppText
+                      textStyles={{
+                        color: '#4E596F',
+                        fontFamily: Fonts.PoppinsRegular,
+                      }}
+                      text={item.location}
+                    />
                   </View>
-                  <View style={{flex: 2}}>
-                    <AppText textStyles={{color: 'black'}}>
-                      ${item.additional_info}
-                    </AppText>
+                  <View
+                    style={{
+                      alignItems: 'flex-end',
+                      flex: 1,
+                      marginBottom: 10,
+                      flexDirection: 'row',
+                    }}>
+                    <View style={{flex: 8, alignItems: 'flex-start'}}>
+                      <Stars />
+                    </View>
+                    <View style={{flex: 2}}>
+                      <AppText textStyles={{color: 'black'}}>
+                        ${item.additional_info}
+                      </AppText>
+                    </View>
                   </View>
                 </View>
-              </View>
-            </DashboardCard>
-          )}
-        />
+              </DashboardCard>
+            )}
+          />
+        </View>
+      </View>
     );
   }
 }
