@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import CardImage from './Image';
 import AppText from '../AppText/AppText';
 import _ from 'lodash';
@@ -35,6 +36,7 @@ const DashboardCard = props => {
             {
               alignItems: 'center',
             },
+
             props.imageContainerStyles,
           ]}>
           {renderImages(props.cardImage)}
