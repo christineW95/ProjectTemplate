@@ -7,6 +7,7 @@ import Favorite from './Favorite';
 import Main from './Home';
 import Cart from './Cart';
 import Profile from './Profile';
+import Trending from '../../Trending/Trending';
 
 const Tabs = createMaterialBottomTabNavigator(
   {
@@ -66,7 +67,6 @@ const Tabs = createMaterialBottomTabNavigator(
         ),
       },
     },
-
   },
   {
     initialRouteName: 'Home',
