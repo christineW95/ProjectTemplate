@@ -1,4 +1,4 @@
-import React, {Component} from 'react';;
+import React, {Component} from 'react';
 import {
   View,
   Text,
@@ -7,15 +7,15 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
-} from 'react-native';;
+} from 'react-native';
 
-import {AppImage, AppInput, AppButton} from '../../components';;
+import {AppImage, AppInput, AppButton} from '../../components';
 
-import Images from '../../Theme/Images';;
+import Images from '../../Theme/Images';
 
-import styles from './LoginScreen.styles';;
+import styles from './LoginScreen.styles';
 
-const keyboardVerticalOffset = Platform.OS === 'ios' ? 20 : 0;;
+const keyboardVerticalOffset = Platform.OS === 'ios' ? 20 : 0;
 const keyboardBehavior = Platform.OS === 'ios' ? 'padding':'';
 
 export default class LoginScreen extends Component {
@@ -24,8 +24,12 @@ export default class LoginScreen extends Component {
   };
 
   navigateToRegistration = () => {
-    const {navigation} =  this.props;;
-    navigation.push('Register');;
+    const {navigation} =  this.props;
+    navigation.push('Register');
+  };
+  navigateToHome= () => {
+    const {navigation} =  this.props;
+    navigation.push('Home');
   };
   navigateToForgotPassword = () => {
     const {navigation} = this.props;
@@ -66,6 +70,7 @@ export default class LoginScreen extends Component {
                   <AppButton
                     buttonStyle={styles.signInButton}
                     textStyle={styles.signInText}
+                    onPress={this.navigateToHome}
                     text="Get the new Order"
                   />
 
@@ -92,6 +97,6 @@ export default class LoginScreen extends Component {
           </ScrollView>
         </SafeAreaView>
       </KeyboardAvoidingView>
-    );;
+    );
   }
 }

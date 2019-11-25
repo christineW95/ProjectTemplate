@@ -1,4 +1,4 @@
-import React, {Component} from 'react';;
+import React, {Component} from 'react';
 import {
   View,
   Text,
@@ -7,15 +7,15 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
-} from 'react-native';;
+} from 'react-native';
 
-import {AppImage, AppInput, AppButton} from '../../components';;
+import {AppImage, AppInput, AppButton} from '../../components';
 
-import Images from '../../Theme/Images';;
+import Images from '../../Theme/Images';
 
-import styles from './RegistrationScreen.styles';;
+import styles from './RegistrationScreen.styles';
 
-const keyboardVerticalOffset = Platform.OS === 'ios' ? 20 : 0;;
+const keyboardVerticalOffset = Platform.OS === 'ios' ? 20 : 0;
 const keyboardBehavior = Platform.OS === 'ios' ? 'padding':'';
 
 export default class RegistrationScreen extends Component {
@@ -42,6 +42,7 @@ export default class RegistrationScreen extends Component {
               marginHorizontal: 10,
             }}
             contentContainerStyle={{flexGrow: 1}}>
+
       <View style={styles.container}>
               <View style={{flex: 1}}>
                 <AppImage image={Images.logo} imageStyle={styles.image} />
@@ -82,6 +83,6 @@ export default class RegistrationScreen extends Component {
           </ScrollView>
         </SafeAreaView>
       </KeyboardAvoidingView>
-    );;
+    );
   }
 }

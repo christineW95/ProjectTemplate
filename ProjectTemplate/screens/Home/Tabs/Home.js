@@ -6,6 +6,10 @@ import DashboardCard from '../../../components/Card/DashboardCard';
 import {Fonts, Colors} from '../../../Theme';
 import AppText from '../../../components/AppText/AppText';
 import Stars from '../../../components/StarReview/StarReview';
+import _ from 'lodash';
+import CardImage from '../../../components/Card/Image';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -151,6 +155,11 @@ const MOST_POPULAR = [
   },
 ];
 export default class Main extends Component {
+navigateToTrending=(item)=>{
+// const navigation=this.props;
+// navigation.navigate('Trending',{item:item});
+}
+
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
@@ -161,6 +170,7 @@ export default class Main extends Component {
             marginHorizontal: 10,
           }}
           contentContainerStyle={{flexGrow: 1}}>
+  <Text>{JSON.stringify(this.props)}</Text>
           <View
             style={{
               backgroundColor: 'lightblue',
@@ -206,7 +216,8 @@ export default class Main extends Component {
               }}
               horizontal={true}
               renderItem={({item}) => (
-                <DashboardCard
+                <TouchableOpacity onPress={this.navigateToTrending(item)}>
+                    <DashboardCard
                   cardColor={item.cardColor}
                   cardImage={item.icon}
                   title={item.title}>
@@ -214,6 +225,8 @@ export default class Main extends Component {
                     <AppText>{item.NumberOfPlaces} places</AppText>
                   </View>
                 </DashboardCard>
+                </TouchableOpacity>
+              
               )}
             />
           </View>
@@ -254,6 +267,7 @@ export default class Main extends Component {
               horizontal={true}
               renderItem={({item}) => (
                 <DashboardCard
+
                   cardColor={'white'}
                   imageContainerStyles={{
                     justifyContent: 'center',
@@ -353,6 +367,7 @@ export default class Main extends Component {
                 horizontal={true}
                 renderItem={({item}) => (
                   <DashboardCard
+
                     cardColor={'white'}
                     imageContainerStyles={{
                       justifyContent: 'center',

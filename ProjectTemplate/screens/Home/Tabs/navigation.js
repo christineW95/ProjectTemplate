@@ -3,11 +3,11 @@ import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom
 import {createAppContainer} from 'react-navigation';
 import React from 'react';
 import {Image, View} from 'react-native';
-
 import Favorite from './Favorite';
 import Main from './Home';
 import Cart from './Cart';
 import Profile from './Profile';
+
 const Tabs = createMaterialBottomTabNavigator(
   {
     Home: {
@@ -66,6 +66,7 @@ const Tabs = createMaterialBottomTabNavigator(
         ),
       },
     },
+
   },
   {
     initialRouteName: 'Home',

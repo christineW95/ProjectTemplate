@@ -9,11 +9,10 @@ import Trending from '../screens/Trending/Trending';
 
 const AppNavigator = createStackNavigator(
   {
-    Home: Home,
     Login: LoginScreen,
+    Home: Home,
     Register: RegistrationScreen,
     ForgotPassword: ForgotPasswordScreen,
-    Trending: Trending,
   },
   {
     defaultNavigationOptions: {

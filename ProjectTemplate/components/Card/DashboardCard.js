@@ -5,10 +5,9 @@ import {View} from 'react-native';
 import CardImage from './Image';
 import AppText from '../AppText/AppText';
 import _ from 'lodash';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const DashboardCard = props => {
-  renderImages = images => {
+  let renderImages = images => {
     if (_.isArray(props.cardImage)) {
       images = _.map(props.cardImage, value => {
         //value is object of {img:require('src)}
@@ -19,7 +18,6 @@ const DashboardCard = props => {
       return <CardImage icon={props.cardImage} style={props.cardImageStyles} />;
     }
   };
-
   return (
     <View
       style={[
@@ -30,28 +28,26 @@ const DashboardCard = props => {
         },
         props.style,
       ]}>
-      <TouchableOpacity onPress={props.onPress}>
-        <View
-          style={[
-            {
-              alignItems: 'center',
-            },
+      <View
+        style={[
+          {
+            alignItems: 'center',
+          },
 
-            props.imageContainerStyles,
-          ]}>
-          {renderImages(props.cardImage)}
-          {/* <CardImage icon={props.cardImage} style={props.cardImageStyles} /> */}
-        </View>
-        <View
-          style={[
-            {alignItems: 'center', flex: 1, marginBottom: 10},
-            props.titleContainerStyles,
-          ]}>
-          <AppText text={props.title} textStyles={props.textStyles} />
-        </View>
-        {props.children}
-      </TouchableOpacity>
+          props.imageContainerStyles,
+        ]}>
+        {renderImages(props.cardImage)}
+      </View>
+      <View
+        style={[
+          {alignItems: 'center', flex: 1, marginBottom: 10},
+          props.titleContainerStyles,
+        ]}>
+        <AppText text={props.title} textStyles={props.textStyles} />
+      </View>
+      {props.children}
     </View>
-  );
+
+      );
 };
 export default DashboardCard;
