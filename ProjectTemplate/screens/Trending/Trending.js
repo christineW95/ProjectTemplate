@@ -8,6 +8,7 @@ import AppText from '../../components/AppText/AppText';
 import Stars from '../../components/StarReview/StarReview';
 import {Fonts} from '../../Theme';
 import Header from '../../components/Header';
+import AppIconButton from '../../components/AppButton/AppIconButton';
 const DATA_Trending = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -75,7 +76,10 @@ export default class Trending extends Component {
     return (
       <View style={{flex: 1,backgroundColor: '#F1F2F6',}}>
              <View style={{marginHorizontal:20}}>
-                <Header />
+                  <Header>
+                        <AppIconButton buttonStyle={{backgroundColor:'white',borderRadius:25,padding:10,marginHorizontal:5}} icon="share-alt"/>
+                       <AppIconButton buttonStyle={{backgroundColor:'white',borderRadius:25,padding:10,marginHorizontal:5}}icon="star"/>
+                   </Header>
               </View>
              <View style={{marginHorizontal:20}}>
           <FlatList

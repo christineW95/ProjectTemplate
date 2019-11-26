@@ -16,10 +16,10 @@ const BackButton = props => {
         },
         props.style,
       ]}>
-      <View style={{flex:1,marginHorizontal:10}}>
+      <View style={{flex:2,marginHorizontal:10}}>
         <Icon name="chevron-left" size={27} color="#F42C53" />
       </View>
-      <View style={{flex: 8,marginHorizontal:-30}}>
+      <View style={{flex: 8,marginHorizontal:-10}}>
         <Text style={{fontFamily:Fonts.PoppinsMedium,color:'#F42C53'}}>Back</Text>
       </View>
     </TouchableOpacity>
