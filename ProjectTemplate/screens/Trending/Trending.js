@@ -70,30 +70,32 @@ export default class Trending extends Component {
   constructor(props) {
     super(props);
   }
-
+//todo : navigation bar
   render() {
     return (
-      <View style={{flex: 1}}>
-        <View style={{flex: 2}}>
-          <Header />
-        </View>
-        <View style={{flex: 8}}>
+      <View style={{flex: 1,backgroundColor: '#F1F2F6',}}>
+             <View style={{marginHorizontal:20}}>
+                <Header />
+              </View>
+             <View style={{marginHorizontal:20}}>
           <FlatList
             data={DATA_Trending}
-            contentContainerStyle={{backgroundColor: '#F1F2F6'}}
+            columnWrapperStyle={{flexDirection:'row',
+              justifyContent: "space-around",}}
+            numColumns={2}
+            contentContainerStyle={{backgroundColor: '#F1F2F6',alignItems:'baseline'}}
             renderItem={({item}) => (
               <DashboardCard
                 style={{margin: 10}}
                 cardColor={'white'}
                 imageContainerStyles={{
-                  justifyContent: 'center',
-                  alignItems: 'center',
                   borderTopRightRadius: 10,
                   borderTopLeftRadius: 10,
                   overflow: 'hidden',
                 }}
+                favorite={true}
                 cardImage={item.icon}
-                cardImageStyles={{resizeMode: 'contain', flex: 1, margin: 7}}
+                cardImageStyles={{resizeMode: 'contain', margin: 7,}}
                 title={item.title}
                 textStyles={{
                   color: '#F42C53',
@@ -134,7 +136,7 @@ export default class Trending extends Component {
                     <View style={{flex: 8, alignItems: 'flex-start'}}>
                       <Stars />
                     </View>
-                    <View style={{flex: 2}}>
+                    <View style={{flex: 2,alignItems:'center'}}>
                       <AppText textStyles={{color: 'black'}}>
                         ${item.additional_info}
                       </AppText>
@@ -145,7 +147,8 @@ export default class Trending extends Component {
             )}
           />
         </View>
-      </View>
+    
+       </View>
     );
   }
 }

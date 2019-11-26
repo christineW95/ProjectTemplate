@@ -4,12 +4,13 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import _ from 'lodash';
 import BackButton from './BackButton';
+import { Colors } from '../../Theme';
 
 const Header = props => {
   return (
-    <View style={[{backgroundColor: 'green',flex:1}, props.style]}>
-      <BackButton />
-      {props.children}
+         
+   <View style={[{ backgroundColor:'#F1F2F6'}, props.style]}>
+     { <BackButton /> || props.children}
     </View>
   );
 };
