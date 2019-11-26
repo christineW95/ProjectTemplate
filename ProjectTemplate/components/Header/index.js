@@ -15,10 +15,7 @@ const Header = props => {
      <View style={{flex:1,flexDirection:'row',marginHorizontal: 40, }}>
      { props.children}
      </View>
-     {/* <View style={{backgroundColor:'red',flex:3}}/>
-     <View style={{flex:4,flexDirection:'row',justifyContent:'space-evenly'}}>
-     
-     </View> */}
+    
     </View>
   );
 };

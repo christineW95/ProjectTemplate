@@ -6,9 +6,11 @@ import ForgotPasswordScreen from '../screens/ForgotPasswordScreen/ForgotPassword
 import {Colors} from '../Theme';
 import Home from '../screens/Home';
 import Trending from '../screens/Trending/Trending';
+import ProductDetails from '../screens/Product/ProductDetails';
 
 const AppNavigator = createStackNavigator(
   {
+    ProductDetails:ProductDetails,
     Trending:Trending,
     Login: LoginScreen,
     Home: Home,

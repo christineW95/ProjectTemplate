@@ -71,23 +71,24 @@ export default class Trending extends Component {
   constructor(props) {
     super(props);
   }
-//todo : navigation bar
+  //todo : navigation bar
   render() {
     return (
-      <View style={{flex: 1,backgroundColor: '#F1F2F6',}}>
-             <View style={{marginHorizontal:20}}>
-                  <Header>
-                        <AppIconButton buttonStyle={{backgroundColor:'white',borderRadius:25,padding:10,marginHorizontal:5}} icon="share-alt"/>
-                       <AppIconButton buttonStyle={{backgroundColor:'white',borderRadius:25,padding:10,marginHorizontal:5}}icon="star"/>
-                   </Header>
-              </View>
-             <View style={{marginHorizontal:20}}>
+      <View style={{flex: 1, backgroundColor: '#F1F2F6'}}>
+        <View style={{marginHorizontal: 20}}>
+          <Header/>
+        </View>
+        <View style={{marginHorizontal: 20}}>
           <FlatList
             data={DATA_Trending}
-            columnWrapperStyle={{flexDirection:'row',
-              justifyContent: "space-around",}}
+            columnWrapperStyle={{
+              flexDirection: 'row',
+              justifyContent: 'space-around'}}
             numColumns={2}
-            contentContainerStyle={{backgroundColor: '#F1F2F6',alignItems:'baseline'}}
+            contentContainerStyle={{
+              backgroundColor: '#F1F2F6',
+              alignItems: 'baseline',
+            }}
             renderItem={({item}) => (
               <DashboardCard
                 style={{margin: 10}}
@@ -99,7 +100,7 @@ export default class Trending extends Component {
                 }}
                 favorite={true}
                 cardImage={item.icon}
-                cardImageStyles={{resizeMode: 'contain', margin: 7,}}
+                cardImageStyles={{resizeMode: 'contain', margin: 7}}
                 title={item.title}
                 textStyles={{
                   color: '#F42C53',
@@ -140,7 +141,7 @@ export default class Trending extends Component {
                     <View style={{flex: 8, alignItems: 'flex-start'}}>
                       <Stars />
                     </View>
-                    <View style={{flex: 2,alignItems:'center'}}>
+                    <View style={{flex: 2, alignItems: 'center'}}>
                       <AppText textStyles={{color: 'black'}}>
                         ${item.additional_info}
                       </AppText>
@@ -151,7 +152,7 @@ export default class Trending extends Component {
             )}
           />
         </View>
-    
+
        </View>
     );
   }

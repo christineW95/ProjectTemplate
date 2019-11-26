@@ -6,7 +6,7 @@ import styles from './AppButton.styles'
 const AppIconButton = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress} style={ props.buttonStyle }>
-      <Icon name={props.icon} color='#242B37' size={25}/>
+      <Icon name={props.icon} color={props.color} size={25}/>
     </TouchableOpacity>
   )
 }
